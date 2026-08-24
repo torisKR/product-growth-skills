@@ -22,11 +22,11 @@ inspect context → gather evidence → choose scope → create or implement →
 | [`expo-android-performance`](expo-android-performance/) | Optimizes Expo across JavaScript, UI, and native boundaries while respecting prebuild ownership | Investigating Expo Android startup, rendering, lists, memory, bundle, or package size |
 | [`expo-interactive-design`](expo-interactive-design/) | Builds native Expo UI, routing and gestures, 2D canvas or motion, bounded 3D, and Android fallbacks | Designing screens, transitions, visualizations, or immersive Expo experiences |
 
-## Installation
+## 설치
 
 Every skill folder is independently invocable. Copy or symlink the repository, or only the skills you need, into the skills directory used by Codex. With the default `CODEX_HOME`, the usual location is `~/.codex/skills`.
 
-### Link the whole collection
+### 전체 컬렉션 연결
 
 ```bash
 git clone https://github.com/toris-dev/product-growth-skills.git
@@ -38,7 +38,7 @@ done
 
 Check for existing folders or symlinks with the same names before running the commands. If you use a custom `CODEX_HOME`, replace the destination with its `skills` directory.
 
-### Copy one skill
+### 단일 스킬 복사
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -68,7 +68,7 @@ fi
 
 Start a new Codex task and invoke a skill explicitly with `$skill-name`. Other agents may understand `SKILL.md`, but installation locations and implicit invocation behavior differ by product.
 
-## Recommended daily workflow
+## 기본 워크플로
 
 The default mode is **execute**. For a request to create, improve, optimize, design, implement, or fix something in a supplied project, the selected skill should inspect the current state, make safe in-scope local changes, run relevant verification, and hand off the result.
 
@@ -161,7 +161,7 @@ Each skill contains:
 - Design skills treat reduced motion, assistive technologies, constrained devices, loading states, and failure states as core deliverables.
 - Missing access to external services, store consoles, analytics, or physical devices is reported as an explicit verification limit.
 
-## Validation
+## 검증
 
 Validate the repository structure and metadata:
 
