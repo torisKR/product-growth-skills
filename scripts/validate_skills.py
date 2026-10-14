@@ -18,9 +18,16 @@ EXPECTED = {
     "expo-android-performance",
     "expo-interactive-design",
     "toris-flutter-play-store-release",
+    "toris-solo-founder",
+    "toris-demand-validation",
+    "toris-cost-guardrails",
+    "toris-billing-reliability",
+    "toris-small-sample-experiments",
 }
 STANDALONE_SKILL = "toris-flutter-play-store-release"
 REQUIRED_INTERFACE_KEYS = ("display_name", "short_description", "default_prompt")
+HUMAN_DOC_LOCALES = frozenset({"ko", "en", "ja", "zh", "fr"})
+RUNTIME_INSTRUCTION_NAMES = frozenset({"SKILL.md", "AGENTS.md", "CLAUDE.md"})
 IGNORED_SCAN_ROOTS = {
     ROOT / ".git",
     ROOT / ".superpowers",
@@ -113,10 +120,24 @@ def scan_content() -> list[str]:
             errors.append(f"{path.relative_to(ROOT)}: machine-specific absolute path found")
         if path.suffix.lower() == ".md":
             errors.extend(local_link_errors(path))
-        if path.suffix.lower() == ".md" and any(
+        # Root navigation, explicit human-guide locales and private notes may
+        # be localized. Runtime instructions remain English in every directory.
+        # All link, unfinished-content, path and credential checks still apply.
+        relative = path.relative_to(ROOT)
+        localized_guide = (
+            len(relative.parts) >= 3
+            and relative.parts[0] == "docs"
+            and relative.parts[1] in HUMAN_DOC_LOCALES
+        )
+        human_document = path.name not in RUNTIME_INSTRUCTION_NAMES and (
+            relative == Path("README.md")
+            or localized_guide
+            or relative.parts[:1] == ("local-knowledge",)
+        )
+        if path.suffix.lower() == ".md" and not human_document and any(
             ord(char) > 127 and unicodedata.category(char).startswith("L") for char in text
         ):
-            errors.append(f"{path.relative_to(ROOT)}: runtime documentation must be English")
+            errors.append(f"{relative}: runtime documentation must be English")
         active_config = (
             path.suffix.lower() in ACTIVE_CONFIG_SUFFIXES | {".rb"}
             or path.name in RUBY_FILENAMES

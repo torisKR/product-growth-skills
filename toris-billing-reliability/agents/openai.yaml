@@ -1,0 +1,4 @@
+interface:
+  display_name: "Toris Billing Reliability"
+  short_description: "Verify billing events and recover entitlement state"
+  default_prompt: "Use $toris-billing-reliability to inspect this payment integration, identify entitlement invariants, implement authorized local fixes, and test duplicate, ordering, pending and recovery cases without real charges or refunds. Reply in my language."

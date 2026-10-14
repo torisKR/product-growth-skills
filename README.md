@@ -1,186 +1,122 @@
 # Product Growth Skills
 
-> Open-source agent skills for app-store growth, web SEO/GEO, Flutter and Expo Android performance, Flutter Play Store delivery, and interactive 2D/3D product design.
+> Make better product decisions. Build with evidence. Verify the result.
 
-This repository packages seven reusable agent skills for product-growth work across the web and mobile apps. They cover search visibility, app-store conversion, Android performance, Flutter Play Store release automation, and interactive Flutter and Expo design.
+**12 focused agent skills** for solo development and product growth: demand validation, cost control, reliable billing, experiments, store listings, SEO/GEO, Flutter and Expo performance, interactive design, and Android delivery.
 
-Each skill follows an evidence-driven workflow instead of acting as a generic checklist:
+[한국어](docs/ko/README.md) · [English](docs/en/README.md) · [日本語](docs/ja/README.md) · [简体中文](docs/zh/README.md) · [Français](docs/fr/README.md)
+
+---
+
+## Start with your next decision
+
+New to the collection? Start with **[toris-solo-founder](toris-solo-founder/SKILL.md)**. Already have a specific problem? Read the matching specialist below.
+
+### Plan and operate
+
+| Skill | Use it to |
+|---|---|
+| [toris-solo-founder](toris-solo-founder/SKILL.md) | Connect product intent, bounded execution, verification, and reusable lessons |
+| [toris-demand-validation](toris-demand-validation/SKILL.md) | Separate customer evidence from assumptions before expanding an MVP |
+| [toris-cost-guardrails](toris-cost-guardrails/SKILL.md) | Map billable operations, distinguish alerts from enforcement, and bound concurrent spending |
+| [toris-billing-reliability](toris-billing-reliability/SKILL.md) | Handle duplicate events, purchase verification, subscription access, and recovery |
+| [toris-small-sample-experiments](toris-small-sample-experiments/SKILL.md) | Interpret limited traffic, experiment integrity, and mature retention cohorts |
+
+### Reach users
+
+| Skill | Use it to |
+|---|---|
+| [app-store-listing-creator](app-store-listing-creator/SKILL.md) | Prepare store copy, visual directions, screenshot plans, and localization notes |
+| [seo-geo-optimizer](seo-geo-optimizer/SKILL.md) | Improve technical SEO, structured data, internal links, and AI-search discoverability |
+
+### Build and ship
+
+| Skill | Use it to |
+|---|---|
+| [flutter-android-performance](flutter-android-performance/SKILL.md) | Measure and address Flutter startup, rendering, memory, and package-size issues |
+| [expo-android-performance](expo-android-performance/SKILL.md) | Investigate Expo performance across JavaScript, UI, and native boundaries |
+| [flutter-interactive-design](flutter-interactive-design/SKILL.md) | Build responsive Flutter interactions with motion and accessibility fallbacks |
+| [expo-interactive-design](expo-interactive-design/SKILL.md) | Create native Expo screens, gestures, motion, and bounded 3D experiences |
+| [toris-flutter-play-store-release](toris-flutter-play-store-release/SKILL.md) | Inspect, configure, verify, and operate Flutter Android delivery within explicit authorization |
+
+## Quick start
+
+For a new checkout:
+
+```bash
+git clone https://github.com/torisKR/product-growth-skills.git
+cd product-growth-skills
+```
+
+Already have the repository? Use that checkout instead of cloning again. Ask your current agent, with local file access, to read a skill:
 
 ```text
-inspect context → gather evidence → choose scope → create or implement → verify → report results and limits
+Read toris-solo-founder/SKILL.md from this repository and apply it to my task.
+Keep the current agent and project instructions.
+Define the outcome, allowed changes, acceptance checks, and cost boundary.
+Perform authorized local work, then separate verified results from unknowns.
+Record a reusable lesson only when the work provides evidence for it.
+Reply in my language.
 ```
 
-## Skills
+**Keep the repository layout intact.** Skills can reference sibling `shared-references/`, `research/`, and other skill folders. Copying one folder alone can break those references. This file-reading workflow does not install skills globally or configure any agent.
 
-| Skill | What it does | Use it when |
-|---|---|---|
-| [`app-store-listing-creator`](app-store-listing-creator/) | Creates Play Store and App Store icon directions, image-generation prompts, screenshot storyboards, short and full descriptions, keyword strategy, and localization notes | Launching or relaunching an app, improving store conversion, or preparing listing assets |
-| [`seo-geo-optimizer`](seo-geo-optimizer/) | Audits technical SEO, search intent, keyword maps, structured data, internal links, GEO, and `llms.txt` | Launching, migrating, or auditing a website and improving search or AI-answer discoverability |
-| [`flutter-android-performance`](flutter-android-performance/) | Measures and optimizes startup, frames and jank, CPU, memory, network, assets, and app size | Investigating Flutter Android regressions or preparing a release performance review |
-| [`toris-flutter-play-store-release`](toris-flutter-play-store-release/) | Inspects, configures, validates, repairs, builds, and safely operates Flutter Android delivery with Fastlane and GitHub Actions | Preparing Google Play delivery, Firebase App Distribution, Slack notifications, or Android release automation |
-| [`flutter-interactive-design`](flutter-interactive-design/) | Designs responsive Flutter UI, gesture-driven 2D motion, shaders, bounded 3D, and accessible performance fallbacks | Building screens, onboarding, visualizations, games, or immersive interactions |
-| [`expo-android-performance`](expo-android-performance/) | Optimizes Expo across JavaScript, UI, and native boundaries while respecting prebuild ownership | Investigating Expo Android startup, rendering, lists, memory, bundle, or package size |
-| [`expo-interactive-design`](expo-interactive-design/) | Builds native Expo UI, routing and gestures, 2D canvas or motion, bounded 3D, and Android fallbacks | Designing screens, transitions, visualizations, or immersive Expo experiences |
+For native skill discovery, optional installation, and release-package migration, see the [full guide](docs/en/README.md#quick-start) and the [release package guide](toris-flutter-play-store-release/README.md).
 
-## Installation
+## A practical solo-operator toolkit
 
-Every skill folder is independently invocable. Copy or symlink the repository, or only the skills you need, into the skills directory used by Codex. With the default `CODEX_HOME`, the usual location is `~/.codex/skills`.
+The [operator toolkit](toris-solo-founder/README.md) adds a [one-person playbook](toris-solo-founder/references/solo-operator-playbook.md), ten conditional operating decisions, and a read-only calculator for available development hours, cash break-even, owner-income targets, and automation time payback. Read it explicitly alongside the founder skill; automatic loading is not assumed. The sample is synthetic, not your business data. See the [Korean walkthrough](docs/ko/solo-operator-playbook.md).
 
-### Link the whole collection
-
-```bash
-git clone https://github.com/toris-dev/product-growth-skills.git
-mkdir -p ~/.codex/skills
-for skill in app-store-listing-creator seo-geo-optimizer flutter-android-performance flutter-interactive-design expo-android-performance expo-interactive-design toris-flutter-play-store-release; do
-  ln -s "$(pwd)/product-growth-skills/$skill" "$HOME/.codex/skills/$skill"
-done
-```
-
-Check for existing folders or symlinks with the same names before running the commands. If you use a custom `CODEX_HOME`, replace the destination with its `skills` directory.
-
-### Copy one skill
-
-```bash
-mkdir -p ~/.codex/skills
-cp -R product-growth-skills/seo-geo-optimizer ~/.codex/skills/
-cp -R product-growth-skills/shared-references ~/.codex/skills/
-```
-
-The original six skills refer to `shared-references/` through a relative path. When copying one of them, place the shared folder under the same parent directory as shown above. Cloning the repository and linking selected skill folders is the safest way to preserve this structure.
-
-The standalone `toris-flutter-play-store-release` package carries its own execution policy and lifecycle installer. From a trusted checkout, preview and then copy its verified runtime files into the supported global skill directories:
-
-```bash
-./product-growth-skills/toris-flutter-play-store-release/install.sh --dry-run
-./product-growth-skills/toris-flutter-play-store-release/install.sh
-```
-
-When migrating from the former `flutter-play-store-release` name, install the new package first and rerun its dry-run until it reports `would no change`. Then remove the verified legacy copies through their own uninstaller so both names are not discovered:
-
-```bash
-LEGACY_SKILL="$HOME/.agents/skills/flutter-play-store-release"
-if [ ! -x "$LEGACY_SKILL/uninstall.sh" ]; then
-  LEGACY_SKILL="$HOME/.claude/skills/flutter-play-store-release"
-fi
-"$LEGACY_SKILL/uninstall.sh" --dry-run
-"$LEGACY_SKILL/uninstall.sh" --yes
-```
-
-Start a new Codex task and invoke a skill explicitly with `$skill-name`. Other agents may understand `SKILL.md`, but installation locations and implicit invocation behavior differ by product.
-
-## Recommended daily workflow
-
-The default mode is **execute**. For a request to create, improve, optimize, design, implement, or fix something in a supplied project, the selected skill should inspect the current state, make safe in-scope local changes, run relevant verification, and hand off the result.
-
-Override the default explicitly when you want a different outcome:
-
-| Mode | How to request it | Result |
-|---|---|---|
-| `execute` | "Implement this" or no mode on a create/improve/fix request | Inspect, change, verify, and hand off |
-| `review` | "Review only; do not change files" | Inspect and report without local or external changes |
-| `plan` | "Plan this; do not implement yet" | Inspect and produce an implementation-ready plan |
-
-### Copy-ready personal prompts
+## One workflow, three modes
 
 ```text
-Use $app-store-listing-creator to inspect my app evidence, create the complete
-Play Store and App Store package in Korean and English, verify current constraints,
-and report only the upload steps I must perform.
-
-Use $seo-geo-optimizer to inspect this live site and repository, implement the
-highest-confidence SEO, GEO, keyword, structured-data, and llms.txt improvements,
-verify the rendered result, and report remaining external-console actions.
-
-Use $flutter-android-performance to reproduce this Android performance issue,
-capture a profile/release baseline, implement the evidenced fix, rerun the same
-scenario, and report comparable measurements.
-
-Use $toris-flutter-play-store-release to inspect this Flutter app, configure the
-smallest safe Android release path, validate it without uploading, and report
-the exact Google Play, Firebase, GitHub, or Slack actions that still require me.
-
-Use $flutter-interactive-design to inspect this app and implement a complete
-vertical slice with a distinctive visual direction, purposeful 2D/3D interaction,
-reduced-motion fallback, and verified frame performance.
-
-Use $expo-android-performance to reproduce this Android performance issue,
-detect Expo and native ownership, implement the fix in the durable source of truth,
-and verify the same scenario in a production-like build.
-
-Use $expo-interactive-design to inspect this app and implement a complete route
-with intentional native UI, interactive 2D/3D motion, low-end and reduced-motion
-fallbacks, and production-like Android verification.
+Inspect context → gather evidence → define scope → act → verify → report
 ```
 
-Skill instructions are written in English, but each skill tells the agent to return deliverables in the user's language unless the target market or locale requires another language.
+| Mode | Result |
+|---|---|
+| `execute` | Make authorized local changes and verify them; default for implementation requests |
+| `review` | Inspect and report without changing files or external systems |
+| `plan` | Produce an actionable plan without implementation |
 
-### Actions that still require confirmation
+A request to edit local files does **not** authorize spending, deployment, public posting, account changes, destructive operations, or contacting people. See [execution defaults](shared-references/execution-defaults.md).
 
-The skills can edit and test local project files as part of the requested outcome. They still require explicit authorization before deployment, public upload, store submission, live CMS or external-console changes, paid services, account or permission changes, destructive operations, or contacting other people.
+## Evidence, not promises
 
-### Expected handoff
+The founder skill distinguishes curated experience, historical preferences, proposals, and unknowns. The four research-backed specialists use a [dated evidence bundle](research/solo-developer-2026-10-15/README.md): **16 primary sources, 20 decision rules, 4 numeric records, 12 synthetic scenarios, and 6 arithmetic fixtures**. Three conflicting items remain quarantined.
 
-```text
-Changed: files, assets, copy, or configuration
-Verified: commands, measurements, rendered evidence, or review checks
-Not verified: missing access, hardware, platforms, or inconclusive evidence
-Your action: only the remaining steps that require you
-```
+Research is not personal experience. Synthetic scenarios are not completed agent tests. A local test is not a live release, a real purchase, or a business result. [Provenance](toris-solo-founder/references/agents-and-provenance.md) and [recorded verification](research/solo-developer-2026-10-15/VERIFICATION.md) preserve those limits.
 
-## Repository structure
+Private operator notes under `local-knowledge/` are Git-ignored, optional, and excluded from distribution. Git exclusion is not encryption or backup.
 
-```text
-product-growth-skills/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── scripts/validate_skills.py
-├── shared-references/evidence-and-verification.md
-├── app-store-listing-creator/
-├── seo-geo-optimizer/
-├── flutter-android-performance/
-├── toris-flutter-play-store-release/
-├── flutter-interactive-design/
-├── expo-android-performance/
-└── expo-interactive-design/
-```
+## Documentation
 
-Each skill contains:
+Each language guide covers the same skill catalog, quick start, working modes, evidence, repository layout, validation, and safety boundaries.
 
-- `SKILL.md`: invocation conditions, workflow, mutation boundaries, and verification requirements
-- `agents/openai.yaml`: display metadata and an example starter prompt
-- `references/`: detailed deliverable contracts and decision guidance loaded only when needed
+| Language | Guide |
+|---|---|
+| 한국어 | [한국어 가이드](docs/ko/README.md) |
+| English | [English guide](docs/en/README.md) |
+| 日本語 | [日本語ガイド](docs/ja/README.md) |
+| 简体中文 | [简体中文指南](docs/zh/README.md) |
+| Français | [Guide en français](docs/fr/README.md) |
 
-## Design principles and limits
+Existing deep dives remain available: [Korean founder guide](docs/ko/torisKR-solo-founder.md), [Korean research guide](docs/ko/research-backed-skills.md), and [research documentation](research/solo-developer-2026-10-15/README.md). Runtime `SKILL.md` instructions remain in English; the human guides and example prompts are localized.
 
-- Store specifications, search-engine policies, framework APIs, and other unstable facts must be verified against current official documentation during the task.
-- An audit or diagnosis request does not authorize publishing externally or changing code.
-- The skills never guarantee store approval, search ranking, AI-answer citations, or performance gains.
-- When image generation is available and authorized, the store skill can create visual concepts. Otherwise, it produces implementation-ready briefs and prompts.
-- Performance skills do not declare success without comparable before-and-after measurements.
-- Design skills treat reduced motion, assistive technologies, constrained devices, loading states, and failure states as core deliverables.
-- Missing access to external services, store consoles, analytics, or physical devices is reported as an explicit verification limit.
+## Validate locally
 
-## Validation
-
-Validate the repository structure and metadata:
+Run from the repository root:
 
 ```bash
-python3 scripts/validate_skills.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p 'test_*.py'
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/validate_research.py --as-of 2026-10-15
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/validate_skills.py
+git diff --check
 bash toris-flutter-play-store-release/tests/run_tests.sh
 ```
 
-If the official `skill-creator` tools are installed, validate each skill separately:
+These checks cover document parity, links, skill metadata, research contracts, arithmetic, and release-package tests. They do not establish native runtime compatibility or commercial outcomes. The strict release manifest check can reject unrelated local files such as `.DS_Store`; report that failure rather than hiding it.
 
-```bash
-python3 /path/to/skill-creator/scripts/quick_validate.py app-store-listing-creator
-python3 /path/to/skill-creator/scripts/quick_validate.py toris-flutter-play-store-release
-```
+---
 
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution steps and quality requirements. Prefer instructions that verify changing platform facts at task time instead of hard-coding them into reusable skills.
-
-## License
-
-[MIT License](LICENSE)
+[Contributing](CONTRIBUTING.md) · [MIT License](LICENSE)

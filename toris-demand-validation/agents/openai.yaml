@@ -1,0 +1,4 @@
+interface:
+  display_name: "Toris Demand Validation"
+  short_description: "Validate demand before expanding a solo product"
+  default_prompt: "Use $toris-demand-validation to inspect my product evidence, separate real observations from assumptions, and produce the smallest authorized demand-validation action with a bounded decision memo. Reply in my language."

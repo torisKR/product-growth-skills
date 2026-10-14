@@ -1,0 +1,4 @@
+interface:
+  display_name: "Toris Small-Sample Experiments"
+  short_description: "Make honest decisions from limited product data"
+  default_prompt: "Use $toris-small-sample-experiments to inspect the metric definitions and available data, check cohort maturity and experiment integrity, and report an evidence-supported decision without inventing a winner. Reply in my language."

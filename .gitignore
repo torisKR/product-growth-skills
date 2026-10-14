@@ -9,3 +9,6 @@ __pycache__/
 .env.*
 !.env.example
 
+# Personal source pointers and operator decisions stay local.
+/local-knowledge/
+

@@ -1,0 +1,4 @@
+interface:
+  display_name: "torisKR Solo Founder"
+  short_description: "Evidence-led solo development and business operations"
+  default_prompt: "Use $toris-solo-founder to inspect this request and the available evidence, define a bounded solo-founder outcome, execute authorized local work, verify the result, and record reusable lessons. Reply in my language and separate historical preferences, observed results, and proposals."

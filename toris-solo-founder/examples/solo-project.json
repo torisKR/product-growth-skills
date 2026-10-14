@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "input_class": "synthetic",
+  "currency": "KRW",
+  "period": "month",
+  "capacity": {
+    "total_hours": 40,
+    "support_hours": 10,
+    "maintenance_hours": 8,
+    "distribution_hours": 6,
+    "buffer_hours": 4,
+    "feature_hours": 16
+  },
+  "economics": {
+    "net_receipts_per_payer": 10000,
+    "variable_cost_per_payer": 3000,
+    "fixed_cost": 100000,
+    "owner_pay_target": 2000000,
+    "paying_customers": 12
+  },
+  "automation": {
+    "build_hours": 6,
+    "minutes_saved_per_run": 10,
+    "runs_per_period": 18,
+    "maintenance_hours_per_period": 1
+  }
+}

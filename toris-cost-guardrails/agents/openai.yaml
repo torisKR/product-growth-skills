@@ -1,0 +1,4 @@
+interface:
+  display_name: "Toris Cost Guardrails"
+  short_description: "Bound paid operations and expose uncapped cost risk"
+  default_prompt: "Use $toris-cost-guardrails to inspect this project's billable operations, distinguish alerts from enforcement, implement only authorized local controls, and verify non-billable boundary fixtures. Do not change billing settings or spend money. Reply in my language."
